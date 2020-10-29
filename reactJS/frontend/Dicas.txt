@@ -1,0 +1,16 @@
+-- Trabalhando com react na web
+yarn add react react-dom
+
+Babel - Converter (transpilar) código React para um código que o browser entenda
+Webpack - Pra cada tipo de arquivo (.js, .css, .png) eu converto o código de forma diferente
+Loaders - babel-loaders, css-loader, image-loader
+
+yarn add @babel/core @babel/preset-env @babel/preset-react webpack webpack-cli
+
+-- Rodar js no terminal
+yarn add @babel/cli
+
+yarn babel src/index.js --out-file public/bundle.js
+yarn add webpack-dev-server -D
+
+Iniciar server: yarn webpack serve --mode development
