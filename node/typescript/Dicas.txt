@@ -1,0 +1,8 @@
+yarn add typescript -D
+
+yarn add express
+yarn add -D @types/express
+
+- Convertendo código javascript
+yarn tsc -- init
+yarn tsc 
