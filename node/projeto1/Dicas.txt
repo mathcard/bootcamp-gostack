@@ -1,0 +1,25 @@
+-- Iniciando projeto
+yarn init -y
+
+-- Adicionando typescript
+yarn add typescript -D
+
+-- Adicionando Express
+yarn add express
+yarn add @types/express -D
+
+-- Iniciando typescript - Alterar tsconfig.json
+yarn tsc init
+
+-- ts-node-dev - Realiza o papel do tsc e do nodemon (software semelhante o nodemon)
+yarn add ts-node-dev -D
+
+
+
+"dev:server": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts"
+
+-- inspect (Permitir conexão do debug)
+--transpile-only (Não verifica se existe código errado)
+--ignore-watch node_modules (Ignora pasta node_modules)
+
+Para rodar: yarn dev:server
