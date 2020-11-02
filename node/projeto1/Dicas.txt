@@ -23,3 +23,21 @@ yarn add ts-node-dev -D
 --ignore-watch node_modules (Ignora pasta node_modules)
 
 Para rodar: yarn dev:server
+
+--Gerando id dinamicamente
+yarn add uuid
+
+-- Trabalhando com datas
+yarn add date-fns
+
+-- Eslint
+yarn add eslint@6.8.0 -D
+
+-- Prettier
+yarn add prettier eslint-config-prettier eslint-plugin-prettier -D
+
+
+
+Persistência <-> Repositório <-> Rota
+
+Repositório onde ficaram os metodos find, create, etc.
