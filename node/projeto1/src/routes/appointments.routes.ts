@@ -5,10 +5,17 @@ import AppointmentsRepository from '../repositories/AppointmentsRepository';
 const appointmentsRouter = Router();
 const appointmentRepository = new AppointmentsRepository();
 
+appointmentsRouter.get('/', (request, response) => {
+  const appointment = appointmentRepository.all();
+  return response.json(appointment);
+});
+
 appointmentsRouter.post('/', (request, response) => {
   const { provider, date } = request.body;
 
-  const parsedDate = startOfHour(parseISO(date));
+  const parsedDate = parseISO(date);
+
+  const appointmentDate = startOfHour(parsedDate);
 
   // Validando se já existe agendamento na data passada
   const findAppointmentInSameDate = appointmentRepository.findByDate(
@@ -21,7 +28,10 @@ appointmentsRouter.post('/', (request, response) => {
       .json({ message: 'This appointment is already booked' });
   }
 
-  const appointment = appointmentRepository.create(provider, parsedDate);
+  const appointment = appointmentRepository.create({
+    provider,
+    date: appointmentDate,
+  });
 
   return response.json(appointment);
 });
