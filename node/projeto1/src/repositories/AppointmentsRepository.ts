@@ -28,7 +28,7 @@ class AppointmentsRepository {
 
   // Cria uma interface para tipar os parametros recebidos
   public create({ provider, date }: CreateAppointmentDTO): Appointment {
-    const appointment = new Appointment(provider, date);
+    const appointment = new Appointment({ provider, date });
 
     this.appointments.push(appointment);
 

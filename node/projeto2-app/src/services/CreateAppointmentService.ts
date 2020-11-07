@@ -1,33 +1,26 @@
+/* eslint-disable camelcase */
 import { startOfHour } from 'date-fns';
+import { getCustomRepository } from 'typeorm';
 import Appointment from '../models/Appointment';
 import AppointmentsRepository from '../repositories/AppointmentsRepository';
 
-/** Recebimento das informações
- * Tratativa de erros e excessões
- * Acesso ao repositories  */
 interface RequestDTO {
-  provider: string;
+  provider_id: string;
   date: Date;
 }
 
-// SOLID
-// Single Responsability Principle
-// Dependency Invertion Principle
-
 class CreateAppointmentServices {
-  /* Dependency Inversion SOLID */
-  private appointmentsRepository: AppointmentsRepository;
+  public async execute({
+    date,
+    provider_id,
+  }: RequestDTO): Promise<Appointment> {
+    const appointmentsRepository = getCustomRepository(AppointmentsRepository);
 
-  constructor(appointmentsRepository: AppointmentsRepository) {
-    this.appointmentsRepository = appointmentsRepository;
-  }
-
-  public execute({ date, provider }: RequestDTO): Appointment {
     // Transformanda data informada para data inicial
     const appointmentDate = startOfHour(date);
 
     // Validando se já existe agendamento na data passada
-    const findAppointmentInSameDate = this.appointmentsRepository.findByDate(
+    const findAppointmentInSameDate = await appointmentsRepository.findByDate(
       appointmentDate,
     );
 
@@ -35,10 +28,12 @@ class CreateAppointmentServices {
       throw Error('This appointment is already booked');
     }
 
-    const appointment = this.appointmentsRepository.create({
-      provider,
+    const appointment = appointmentsRepository.create({
+      provider_id,
       date: appointmentDate,
     });
+
+    await appointmentsRepository.save(appointment);
 
     return appointment;
   }
