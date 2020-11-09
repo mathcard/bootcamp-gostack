@@ -39,3 +39,24 @@ yarn add prettier eslint-config-prettier eslint-plugin-prettier -D
 
 -- Instalando TYPE ORM e driver do postgres
 yarn add typeorm pg
+
+-- Criptografando a senha
+yarn add bcryptjs
+yarn add -D @types/bcryptjs
+
+-- Autenticação
+yarn add jsonwebtoken
+yarn add -D @types/jsonwebtoken
+
+Alteração na biblioteca express.
+Foi criado a função request.user, onde é buscado o id do usuário logado.
+Necessario criar o arquivo express.d.ts na pasta @types
+
+-- Trabalhando com imagens
+yarn add multer
+yarn add @types/multer -D
+
+
+-- Trabalando com erros
+yarn add express-async-errors
+Importar logo após o express no server.ts

@@ -7,6 +7,7 @@ Script: "typeorm": "ts-node-dev ./node-modules/typeorm/cli.js"
 -- Criando migrations
 yarn typeorm migration:create -n CreateAppointments
 yarn typeorm migration:create -n CreateUsers
+yarn typeorm migration:create -n AddAvatarFieldToUsers
 
 yarn typeorm migration:run
 yarn typeorm migration:revert
