@@ -1,0 +1,12 @@
+-- Trabalhando com Rotas
+yarn add react-router-dom
+yarn add @types/react-router-dom -D
+
+
+-- Trabalhando com CSS
+yarn add styled-components
+yarn add @types/styled-components -D
+yarn add polished
+
+
+Parei no minuto 08:50

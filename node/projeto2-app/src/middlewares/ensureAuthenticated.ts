@@ -28,7 +28,6 @@ export default function ensureAuthenticated(
     const decoded = verify(token, authConfig.jwt.secret);
     console.log(decoded);
 
-    // Forçando a variavel decoded para o tipo  //PAREI NO MINUTO 18:11
     const { sub } = decoded as TokenPayload;
 
     request.user = {
