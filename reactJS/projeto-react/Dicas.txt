@@ -8,5 +8,8 @@ yarn add styled-components
 yarn add @types/styled-components -D
 yarn add polished
 
+-- Icones
+yarn add react-icons
 
-Parei no minuto 08:50
+-- Client API
+yarn add axios
