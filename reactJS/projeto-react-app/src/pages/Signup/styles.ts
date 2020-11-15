@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { shade } from 'polished';
-import signInBackgroundImg from '../../assets/sign-in-background.png';
+import signUpBackgroundImg from '../../assets/sign-up-background.png';
 
 export const Container = styled.div`
   height: 100vh; // Altura total do navegador
@@ -11,8 +11,8 @@ export const Container = styled.div`
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   width: 100%;
   max-width: 700px;
 
@@ -40,7 +40,7 @@ export const Content = styled.div`
 
   // > informa que não altera o nível inferior
   > a {
-    color: #ff9000;
+    color: #f4ede8;
     display: block;
     margin-top: 24px;
     text-decoration: none;
@@ -54,13 +54,13 @@ export const Content = styled.div`
     }
 
     &:hover {
-      color: ${shade(0.4, '#ff9000')};
+      color: ${shade(0.4, '#f4ede8')};
     }
   }
 `;
 
 export const Background = styled.div`
   flex: 1;
-  background: url(${signInBackgroundImg}) no-repeat center;
+  background: url(${signUpBackgroundImg}) no-repeat center;
   background-size: cover; // Cobrir o tamanho que sobra na tela
 `;

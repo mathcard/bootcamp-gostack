@@ -13,3 +13,11 @@ yarn add react-icons
 
 -- Client API
 yarn add axios
+
+Unform
+yarn add @unform/core @unform/web
+
+
+Validação de Formulário
+yarn add yup
+yarn add @types/yup -D
