@@ -21,3 +21,10 @@ yarn add @unform/core @unform/web
 Validação de Formulário
 yarn add yup
 yarn add @types/yup -D
+
+
+Animações
+yarn add react-spring
+
+Rotas
+yarn add react-router-dom
