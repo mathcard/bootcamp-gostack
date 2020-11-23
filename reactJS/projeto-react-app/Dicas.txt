@@ -28,3 +28,4 @@ yarn add react-spring
 
 Rotas
 yarn add react-router-dom
+yarn add @types/react-router-dom
