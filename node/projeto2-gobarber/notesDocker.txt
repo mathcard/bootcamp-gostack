@@ -1,5 +1,5 @@
 -- Iniciando postgres
-docker run --name gostack_postgres -e POSTGRES_PASSWORD=docker -p 5433:5432 -d postgres
+docker run --name goBarber_postgres -e POSTGRES_PASSWORD=docker -p 5433:5432 -d postgres
 
 -- Listar Container
 docker ps
