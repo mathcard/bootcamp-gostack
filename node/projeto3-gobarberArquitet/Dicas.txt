@@ -1,0 +1,62 @@
+-- Iniciando projeto
+yarn init -y
+
+-- Adicionando typescript
+yarn add typescript -D
+
+-- Adicionando Express
+yarn add express
+yarn add @types/express -D
+
+-- Iniciando typescript - Alterar tsconfig.json
+yarn tsc init
+
+-- ts-node-dev - Realiza o papel do tsc e do nodemon (software semelhante o nodemon)
+yarn add ts-node-dev -D
+
+
+
+"dev:server": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules src/server.ts"
+
+-- inspect (Permitir conexão do debug)
+--transpile-only (Não verifica se existe código errado)
+--ignore-watch node_modules (Ignora pasta node_modules)
+
+Para rodar: yarn dev:server
+
+--Gerando id dinamicamente
+yarn add uuid
+
+-- Trabalhando com datas
+yarn add date-fns
+
+-- Eslint
+yarn add eslint@6.8.0 -D
+
+-- Prettier
+yarn add prettier eslint-config-prettier eslint-plugin-prettier -D
+
+
+-- Instalando TYPE ORM e driver do postgres
+yarn add typeorm pg
+
+-- Criptografando a senha
+yarn add bcryptjs
+yarn add -D @types/bcryptjs
+
+-- Autenticação
+yarn add jsonwebtoken
+yarn add -D @types/jsonwebtoken
+
+Alteração na biblioteca express.
+Foi criado a função request.user, onde é buscado o id do usuário logado.
+Necessario criar o arquivo express.d.ts na pasta @types
+
+-- Trabalhando com imagens
+yarn add multer
+yarn add @types/multer -D
+
+
+-- Trabalando com erros
+yarn add express-async-errors
+Importar logo após o express no server.ts

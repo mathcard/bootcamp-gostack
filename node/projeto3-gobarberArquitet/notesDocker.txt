@@ -1,0 +1,20 @@
+-- Iniciando postgres
+docker run --name goBarber_postgres -e POSTGRES_PASSWORD=docker -p 5433:5432 -d postgres
+
+-- Listar Container
+docker ps
+docker ps - a (Lista todos containers)
+
+-- Verificar logs
+docker logs (id)
+
+-- Reiniciar container
+docker start (id)
+
+Para acessar o banco utilize o dbeaver
+Configurando dbear
+host: localhost
+user: postgres
+database: postgres
+port: 5432
+password: (same command docker)
