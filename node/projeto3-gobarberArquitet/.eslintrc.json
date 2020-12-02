@@ -24,6 +24,11 @@
     ],
     "rules": {
       "no-console": "off",
+      "no-useless-constructor": "off",
+      "camelcase": [
+        "error",
+        {"propertires": "never"}
+      ],
       "import/extensions": [
         "error",
         "ignorePackages",
@@ -36,7 +41,15 @@
       "@typescript-eslint/camelcase": "off",
       "@typescript-eslint/no-unused-vars": ["error", {
         "argsIgnorePattern": "_"
-      }]
+      }],
+      "@typescript-eslint/naming-convention": [
+        "error",
+        {
+          "selector": "interface",
+          "prefix": ["I"],
+          "format": ["PascalCase"]
+        }
+      ]
     },
     "settings": {
       "import/resolver": {
