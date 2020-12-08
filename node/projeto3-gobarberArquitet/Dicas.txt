@@ -60,3 +60,8 @@ yarn add @types/multer -D
 -- Trabalando com erros
 yarn add express-async-errors
 Importar logo após o express no server.ts
+
+yarn add jest -D
+yarn jest --init
+yarn add ts-jest -D
+yarn add @types/jest -D
