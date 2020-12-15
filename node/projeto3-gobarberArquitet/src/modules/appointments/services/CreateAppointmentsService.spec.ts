@@ -2,26 +2,26 @@ import 'reflect-metadata';
 
 import AppError from '@shared/errors/AppError';
 
-import FakeCacheProvider from '@shared/container/providers/CacheProvider/fakes/FakeCacheProvider';
-import FakeNotificationsRepository from '@modules/notifications/repositories/fakes/FakeNotificationsRepository';
+//import FakeCacheProvider from '@shared/container/providers/CacheProvider/fakes/FakeCacheProvider';
+//import FakeNotificationsRepository from '@modules/notifications/repositories/fakes/FakeNotificationsRepository';
 import FakeAppointmentsRepository from '../repositories/fakes/FakeAppointmentsRepository';
-import CreateAppointmentService from './CreateAppointmentService';
+import CreateAppointmentService from './CreateAppointmentsService';
 
 let fakeAppointmentsRepository: FakeAppointmentsRepository;
-let fakeCacheProvider: FakeCacheProvider;
-let fakeNotificationsRepository: FakeNotificationsRepository;
+//let fakeCacheProvider: FakeCacheProvider;
+//let fakeNotificationsRepository: FakeNotificationsRepository;
 let createAppointment: CreateAppointmentService;
 
 describe('CreateAppointment', () => {
   beforeEach(() => {
     fakeAppointmentsRepository = new FakeAppointmentsRepository();
-    fakeNotificationsRepository = new FakeNotificationsRepository();
-    fakeCacheProvider = new FakeCacheProvider();
+  //  fakeNotificationsRepository = new FakeNotificationsRepository();
+   // fakeCacheProvider = new FakeCacheProvider();
 
     createAppointment = new CreateAppointmentService(
       fakeAppointmentsRepository,
-      fakeNotificationsRepository,
-      fakeCacheProvider,
+     // fakeNotificationsRepository,
+     // fakeCacheProvider,
     );
   });
 

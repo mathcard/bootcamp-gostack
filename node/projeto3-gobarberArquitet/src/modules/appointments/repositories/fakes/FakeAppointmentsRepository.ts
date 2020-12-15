@@ -19,7 +19,7 @@ export default class FakeAppointmentsRepository
     return findAppointment;
   }
 
-  public async findAllInMonthFromProvider({ provider_id, month, year}: 
+  public async findAllInMonthFromProvider({ provider_id, month, year}:
     IFindAllInMonthFromProviderDTO): Promise<Appointment[]> {
     const appointments = this.appointments.filter(appointment => {
       return (
@@ -32,7 +32,7 @@ export default class FakeAppointmentsRepository
     return appointments;
   }
 
-  public async findAllInDayFromProvider({ provider_id, month, year, day}: 
+  public async findAllInDayFromProvider({ provider_id, month, year, day}:
     IFindAllInDayFromProviderDTO): Promise<Appointment[]> {
     const appointments = this.appointments.filter(appointment => {
       return (
@@ -49,11 +49,12 @@ export default class FakeAppointmentsRepository
 
   public async create({
     provider_id,
+    user_id,
     date,
   }: ICreateAppointmentDTO): Promise<Appointment> {
     const appointment = new Appointment();
 
-    Object.assign(appointment, { id: uuid(), date, provider_id });
+    Object.assign(appointment, { id: uuid(), date, provider_id, user_id, });
 
     this.appointments.push(appointment);
 

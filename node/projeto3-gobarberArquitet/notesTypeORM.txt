@@ -17,3 +17,4 @@ yarn typeorm migration:revert
 
 
 yarn typeorm migration:create -n CreateUserTokens
+yarn typeorm migration:create -n AddUserIdToAppointments
