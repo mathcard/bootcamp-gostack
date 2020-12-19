@@ -18,3 +18,10 @@ user: postgres
 database: postgres
 port: 5432
 password: (same command docker)
+
+
+-- REDIS
+docker run --name redis -p 6379:6379 -d -t redis:alpine
+
+Cache
+async/await

@@ -59,3 +59,4 @@
 - O usário não pode agendar em um horário já ocupado;
 - O usuário não pode agendar em um horáiro que já passou;
 - O usuáiro não pode agendar serviços consigo mesmo;
+

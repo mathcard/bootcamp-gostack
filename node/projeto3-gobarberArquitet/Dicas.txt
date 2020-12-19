@@ -77,3 +77,28 @@ yarn test src/modules/users/services/SendForgotPasswordEmailService.spec.ts
 4 - Provider de envio de e-mail (DEV)
 5 - Registrar providers no container
 6 - Testar tudo!
+
+yarn add celebrate
+yarn add @types/hapi__joi
+
+--Variaveis de ambiente
+yarn add dotenv
+
+-- Alterar as informações exibir no frontend (esconder senha, mostrar url)
+yarn add class-transformer
+
+-- REDIS
+docker run --name redis -p 6379:6379 -d -t redis:alpine
+yarn add @types/ioredis -D
+
+-- BRUTE FORCE
+yarn add rate-limiter-flexible
+
+AULAS apenas vizualidas
+PERSONALIZAÇÃO PARA PRODUÇÃO
+- Emails pelo Amazom SES
+- Organizando o container
+- Upload de arquivos para o Amazom S3
+
+
+CACHE redis

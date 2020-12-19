@@ -11,7 +11,8 @@ const profileController = new ProfileController();
 profileRouter.use(ensureAuthenticated);
 
 profileRouter.get('/', profileController.show);
-/*profileRouter.put(
+
+profileRouter.put(
   '/',
   celebrate({
     [Segments.BODY]: {
@@ -24,7 +25,6 @@ profileRouter.get('/', profileController.show);
   }),
   profileController.update,
 );
-*/
 
-profileRouter.put('/', profileController.update);
+
 export default profileRouter;
