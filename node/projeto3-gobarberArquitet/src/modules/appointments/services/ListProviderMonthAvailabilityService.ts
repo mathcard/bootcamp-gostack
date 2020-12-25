@@ -1,9 +1,7 @@
-  
 import { injectable, inject } from 'tsyringe';
-import { getDaysInMonth, getDate } from 'date-fns';
-import User from '@modules/users/infra/typeorm/entities/User';
-import IAppointmentsRepository from '../repositories/IAppointmentsRepository';
+import { getDaysInMonth, getDate, isAfter } from 'date-fns';
 
+import IAppointmentsRepository from '../repositories/IAppointmentsRepository';
 
 interface IRequest {
   provider_id: string;
@@ -11,10 +9,10 @@ interface IRequest {
   year: number;
 }
 
-type IResponse = Array <{
+type IResponse = Array<{
   day: number;
   available: boolean;
-}>
+}>;
 
 @injectable()
 class ListProviderMonthAvailabilityService {
@@ -23,33 +21,40 @@ class ListProviderMonthAvailabilityService {
     private appointmentsRepository: IAppointmentsRepository,
   ) {}
 
-  public async execute({ provider_id, year, month }: IRequest): Promise<IResponse> {
-    const appointments = await this.appointmentsRepository.findAllInMonthFromProvider({
-      provider_id,
-      year, 
-      month
-    });
+  public async execute({
+    provider_id,
+    year,
+    month,
+  }: IRequest): Promise<IResponse> {
+    const appointments = await this.appointmentsRepository.findAllInMonthFromProvider(
+      {
+        provider_id,
+        year,
+        month,
+      },
+    );
 
-    console.log(appointments);
-    const numberOfDaysInMonth = getDaysInMonth(new Date(year, month -1));
-    
+    const numberOfDaysInMonth = getDaysInMonth(new Date(year, month - 1));
+
     const eachDayArray = Array.from(
-      {length: numberOfDaysInMonth},
+      { length: numberOfDaysInMonth },
       (_, index) => index + 1,
     );
 
     const availability = eachDayArray.map(day => {
+      const compareDate = new Date(year, month - 1, day, 23, 59, 59);
+
       const appointmentsInDay = appointments.filter(appointment => {
         return getDate(appointment.date) === day;
       });
 
       return {
         day,
-        available: appointmentsInDay.length < 10,
-      }
-
+        available:
+          isAfter(compareDate, new Date()) && appointmentsInDay.length < 10,
+      };
     });
-    //console.log('eachDayArray')
+
     return availability;
   }
 }
