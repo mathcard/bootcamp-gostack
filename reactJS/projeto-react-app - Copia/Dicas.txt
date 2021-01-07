@@ -1,0 +1,31 @@
+-- Trabalhando com Rotas
+yarn add react-router-dom
+yarn add @types/react-router-dom -D
+
+
+-- Trabalhando com CSS
+yarn add styled-components
+yarn add @types/styled-components -D
+yarn add polished
+
+-- Icones
+yarn add react-icons
+
+-- Client API
+yarn add axios
+
+Unform
+yarn add @unform/core @unform/web
+
+
+Validação de Formulário
+yarn add yup
+yarn add @types/yup -D
+
+
+Animações
+yarn add react-spring
+
+Rotas
+yarn add react-router-dom
+yarn add @types/react-router-dom
